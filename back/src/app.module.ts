@@ -33,7 +33,7 @@ const uri =
   providers: [AppService],
 })
 export class AppModule {
-  constructor() { 
-    console.log('dirname', __dirname)
+  constructor() {
+    console.log('dirname', __dirname);
   }
 }
