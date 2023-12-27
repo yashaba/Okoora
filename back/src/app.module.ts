@@ -22,7 +22,7 @@ const uri =
       synchronize: true,
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, 'front'),
+      rootPath: join('../', __dirname, 'front'),
     }),
     TodoModule,
     UsersModule,
@@ -32,4 +32,8 @@ const uri =
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() { 
+    console.log('dirname', __dirname)
+  }
+}
