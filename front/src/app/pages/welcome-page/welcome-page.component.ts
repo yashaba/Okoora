@@ -23,7 +23,7 @@ export class WelcomePageComponent {
     }
     this.userService.login(this.username.value, this.password.value).subscribe((res) => {
       if (res) {
-        this.router.navigate(['/todos'])
+        this.router.navigate(['/todo'])
       } else {
         this.isWrongCredentials = true;
       }
@@ -33,10 +33,10 @@ export class WelcomePageComponent {
   continueAsGuest() {
     this.userService.login('Bret', '123456789').subscribe((res) => {
       if (res) {
-        this.router.navigate(['/todos'])
+        this.router.navigate(['/todo'])
       }
     });
-    this.router.navigate(['/todos'])
+    this.router.navigate(['/todo'])
   }
 
 

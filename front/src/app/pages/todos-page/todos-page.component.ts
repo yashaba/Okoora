@@ -19,7 +19,7 @@ export class TodosPageComponent implements OnInit {
   destroy$ = new Subject()
   userId: string = this.userService.userId
   todoFilter: string = 'ALL'
-  displayAmount = 20
+  displayAmount = 50
   
   constructor(private todoService: TodoService, private socketService: SocketService, private userService: UserService, private router: Router) {
   }

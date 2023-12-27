@@ -12,7 +12,7 @@ export const appRoutes: Routes = [
     component: WelcomePageComponent,
   },
   {
-    path: 'todos',
+    path: 'todo',
     component: TodosPageComponent,
     canActivate: [AuthGuard]
   },

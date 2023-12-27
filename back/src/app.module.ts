@@ -22,7 +22,7 @@ const uri =
       synchronize: true,
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'front'),
+      rootPath: join(__dirname, 'front'),
     }),
     TodoModule,
     UsersModule,

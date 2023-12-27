@@ -26,7 +26,7 @@ export class TodoItemComponent implements OnInit {
   cancelEditTxt(){
     this.updateTxt = this.todo.title 
     this.isEditing = false
-    }
+  }
 
   editTodo(){
     this.todoEditedEvent.emit(JSON.stringify(this.todo))
