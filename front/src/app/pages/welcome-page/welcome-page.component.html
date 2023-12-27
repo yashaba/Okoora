@@ -1,0 +1,37 @@
+<div class="welcome-page-container">
+    <div>
+        <h1>
+            Welcome to the Okoora todos, please enter your username and password to continue.
+        </h1>
+    </div>
+    <form (ngSubmit)="login()">
+        <input type="text" [formControl]="username" placeholder="Enter username">
+        <div class="error">
+            <p *ngIf="username.errors?.['required'] && username.invalid && (username.dirty || username.touched)">
+                Username is required.</p>
+        </div>
+        <input type="text" [formControl]="password" placeholder="Enter password">
+        <div class="error">
+            <p *ngIf="password.errors?.['required'] && password.invalid && (password.dirty || password.touched)">
+                Password is required.</p>
+            <p *ngIf="isWrongCredentials">
+                Wrong username or password.</p>
+        </div>
+        <div class="buttons-container">
+            <button class="form-btn" type="submit" [disabled]="username.invalid">Login</button>
+            <button class="form-btn" (click)="continueAsGuest()" [disabled]="username.valid && password.valid">Continue as
+                guest</button>
+        </div>
+
+    </form>
+
+    <div class="example">
+        <p>
+            Example username: <span>Bret</span>
+        </p>
+        <p>
+            Example password: <span>123456789</span>
+        </p>
+    </div>
+
+</div>

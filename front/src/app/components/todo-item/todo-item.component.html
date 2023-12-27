@@ -1,0 +1,33 @@
+<div class="todo-item">
+    <div *ngIf="!isEditing; else editMode">
+        <mat-list-item color="#11998e"   role="listitem">
+            <mat-checkbox
+            [checked]="todo.completed"
+            [(ngModel)]="todo.completed"
+            (ngModelChange)="editTodo()"
+            color="#11998e"
+            >
+            {{todo.title}}
+           </mat-checkbox>
+           </mat-list-item>
+           <button (click)="deleteTodo()" mat-fab color="basic" class="btn-delete" >
+            <mat-icon >delete</mat-icon>
+          </button>
+           <button (click)="isEditing = true" color="basic" mat-fab class="btn-edit">
+            <mat-icon >edit</mat-icon>
+          </button>
+    </div>
+
+
+
+    <ng-template #editMode>
+        <div class="formEdit">
+            <input [(ngModel)]="updateTxt" type="text" class="inputEdit"/>
+            <button (click)="applyEditTxt()">Apply</button> 
+            <button (click)="cancelEditTxt()" class="btn-cancel">Cancel</button>
+        </div>
+
+
+       <!-- <input [(ngModel)]="updateTxt" type="text"> <button (click)="applyEditTxt()">Apply</button> <button (click)="cancelEditTxt()">Cancel</button> -->
+    </ng-template>
+</div>

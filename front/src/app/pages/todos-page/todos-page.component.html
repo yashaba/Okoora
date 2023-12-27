@@ -1,0 +1,33 @@
+<div class="todo-page">
+    <p class="title">Todo list</p>
+    <mat-progress-bar mode="determinate" color="basic"  [value]="calculateTodos()" ></mat-progress-bar>
+
+    <div class="form">
+        <input type="input" [(ngModel)]="newTodoTxt" class="inputText" placeholder="Title" name="title" id='title' required />
+        <label for="title" class="label">Title</label>
+        <button (click)="createTodo()">Create</button>
+    </div>
+    <div class="controlls-wrapper">
+        <div class="mat-select-wrapper">
+            <mat-select placeholder="Filter" [(ngModel)]="todoFilter">
+                <mat-option value="ALL">All</mat-option>
+                <mat-option value="DONE">Done</mat-option>
+                <mat-option value="ACTIVE">Active</mat-option>
+            </mat-select>
+        </div>
+        <div class="mat-select-wrapper">
+            <mat-select placeholder="Display amount" [(ngModel)]="displayAmount" >
+                <mat-option value="20">20</mat-option>
+                <mat-option value="10">10</mat-option>
+                <mat-option value="5">5</mat-option>
+            </mat-select>
+        </div>
+
+    </div>
+    <mat-list role="list" class="list-container">
+        <app-todo-item *ngFor="let todo of filterTodos(todoFilter,displayAmount)" (todoEditedEvent)="editTodo($event)" (deleteTodoEvent)="deleteTodo($event)"  [todo]="todo"></app-todo-item>
+    </mat-list>
+    <div class="flex justify-center logout">
+    <button (click)="logout()" >Logout</button>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+$green: #11998e;
+$gray: #9b9b9b;
+
+::ng-deep .mat-mdc-checkbox.mat-mdc-checkbox-checked .mdc-checkbox__background , .mdc-checkbox__ripple label  {
+    background-color: $green !important;
+    border-color: $green !important;
+    color: rgb(0, 0, 0) !important;
+
+}
+
+::ng-deep .mdc-form-field  {
+    color: rgb(0, 0, 0) !important;
+}
+
+::ng-deep .mdc-linear-progress__bar-inner {
+    background-color: $green !important;
+    border-color: $green !important;
+
+}
+
+::ng-deep .mat-mdc-progress-bar .mdc-linear-progress__buffer-bar {
+    background-color: #fde68a !important;
+
+}
+
+.todo-item {
+  div {
+    display: flex;
+    margin: 20px 10px;
+    // font-size: 2rem;
+  }
+
+  .btn-delete {
+    margin: 0 10px;
+    color: $green;
+    &:hover {
+      background-color: $green;
+      color: white;
+    }
+  }
+  .btn-edit {
+    &:hover {
+      background-color: #fde68a;
+    }
+  }
+
+  .formEdit {
+    padding: 15px 0 0;
+    margin: 0 0 10px 20px;
+    display: flex;
+
+    .inputEdit {
+      font-family: inherit;
+      width: 100%;
+      border: 0;
+      border-bottom: 2px solid $gray;
+      outline: 0;
+    //   font-size: 2rem;
+      color: black;
+      padding: 7px 0;
+      background: transparent;
+    }
+
+    button {
+      margin: 0 10px;
+      width: 140px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      background-color: #11998e;
+      color: white;
+      
+      &:hover {
+        background-color: transparent;
+        color: #11998e;
+        cursor: pointer;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      }
+    }
+
+    .btn-cancel {
+        background-color: #fde68a;
+        color: black;
+        &:hover {
+            background-color: #e6d07c;
+            color: black;
+        }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.todo-page {
+  width: 50vw;
+  height: 80vh;
+  margin: 10vh auto;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    
+    
+  }
+  .title {
+    // color: white;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  .list-container {
+    height: 73%;
+    overflow-y: scroll;
+    width: 99%;
+
+  }
+
+  .controlls-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    .mat-select-wrapper {
+      // margin: auto;
+      border-radius: 10px;
+      width: 40%;
+      background-color: #11998e;
+      padding: 0.5rem;
+    }
+   
+
+  }
+
+}
+
+
+
+$green: #11998e;
+$gray: #9b9b9b;
+.form {
+  position: relative;
+  padding: 15px 0 0;
+  margin: 10px auto;
+  width: 40%;
+  display: flex;
+
+  input {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    background: transparent;
+
+    &::placeholder {
+      color: transparent;
+      top: 0;
+    }
+
+    &:placeholder-shown ~ .label {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 20px;
+    }
+  }
+
+  .label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $gray;
+  }
+
+ 
+}
+
+button {
+  margin: 0 20px;
+  width: 140px;
+  background-color: transparent;
+  color: #11998e;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+
+
+  &:hover {
+    cursor: pointer;
+    background-color: #11998e;
+    color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  
+}
+
+.logout {
+  height: 2rem;
+}
+
+.input:focus {
+  ~ .label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $green;
+    font-weight: 700;
+  }
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+}
+/* reset input */
+.input {
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+}
